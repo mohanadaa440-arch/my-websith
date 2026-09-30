@@ -1,0 +1,81 @@
+# ============================================
+# PHP + MySQL project - secure .gitignore
+# ============================================
+
+# --- Real database configuration / secrets ---
+/config/config.php
+/config/config.local.php
+.env
+.env.*
+!.env.example
+!/config/config.example.php
+
+# --- SQL databases / dumps / exports ---
+*.sql
+*.sql.gz
+*.sql.zip
+*.dump
+*.db
+*.sqlite
+*.sqlite3
+
+# --- Database / backup folders ---
+/backups/
+/backup/
+/database/backups/
+/database/dumps/
+
+# --- Backup / temporary copies ---
+*.bak
+*.backup
+*.old
+*.orig
+*.tmp
+*.temp
+*~
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+
+# --- Logs ---
+*.log
+/logs/
+/log/
+
+# --- Local setup / runtime state ---
+.setup_complete
+*.pid
+*.session
+
+# --- PHP dependency / tool cache files ---
+.phpunit.result.cache
+.php-cs-fixer.cache
+
+# --- IDE / editor files ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# --- OS-generated files ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Local server / XAMPP-specific files if created inside project ---
+xampp/
+php_error_log
+error_log
+
+# ============================================
+# Keep safe example/config templates tracked:
+#   config/config.example.php
+#   .env.example
+#
+# IMPORTANT:
+# Do not put real passwords, API keys, user data,
+# identity numbers, or production database dumps
+# in files committed to Git.
+# ============================================
