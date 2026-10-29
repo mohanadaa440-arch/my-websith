@@ -18,9 +18,7 @@ if (setup_complete()) {
         $error = 'تأكيد كلمة المرور غير مطابق.';
     } else {
         try {
-            $server = db(true);
-            $dbName = str_replace('`', '``', (string)app_config('db_name'));
-            $server->exec("CREATE DATABASE IF NOT EXISTS `{$dbName}` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
+            // أنشئ قاعدة البيانات من لوحة الاستضافة أولاً؛ كثير من الاستضافات المشتركة لا تسمح بإنشائها من PHP.
             $pdo = db();
             $schema = file_get_contents(__DIR__ . '/database/schema.sql');
             foreach (preg_split('/;\s*(?:\r?\n|$)/', $schema) as $sql) {
